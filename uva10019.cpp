@@ -23,6 +23,14 @@ int main() {
 		int numberhex;
 		cin >> number;
 		numberhex = number;
+		/*
+		to_string another method
+		
+		stringstream ss;
+		ss<<numberhex;
+		string s=ss.str();
+		
+		*/
 		for (int i = 0; i < to_string(numberhex).size(); i++) {
 			hex.push_back((to_string(numberhex)[i] - '0'));
 		}

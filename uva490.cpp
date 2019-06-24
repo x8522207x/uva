@@ -27,7 +27,7 @@ int main(){
 			}else if(i!=0 &&!test[i][j]){
 				cout<<" ";
 			}
-		}
+		} 
 		cout<<'\n';
 	}
 	return 0;

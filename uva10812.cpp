@@ -17,5 +17,5 @@ int main() {
 			cout << "impossible" << endl;
 		}
 	}
-
+	return 0;
 }

@@ -35,7 +35,7 @@ int main() {
 		cout << answer << endl;
 		ss.clear();
 		b.clear();
-	}
+	} 
 	
 	
 	

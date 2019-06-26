@@ -1,17 +1,13 @@
 #include <iostream>
 using namespace std;
 int main() {
-	int Case;
+	int Case =0;
 	cin >> Case;
 	while (Case--) {
 		int a, b;
-		int c = 0;
-		int d = 0;
 		cin >> a >> b;
-		c = (a + b) / 2;
-		d = (a - b) / 2;
-		if (d >= 0&&(c+d)==a) {
-			cout << c << " " << d << endl;
+		if ((a - b) / 2 >= 0&&((a + b) / 2+(a - b) / 2)==a) {
+			cout << (a + b) / 2 << " " << (a - b) / 2 << endl;
 		}
 		else {
 			cout << "impossible" << endl;

@@ -1,22 +1,22 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 int main(){
-	string A;
-	string B;
-	string C = "abcdefghijklmnopqrstuvwxyz";
-	while (getline(cin, A) && getline(cin, B)){		
-		for (int i = 0; i < C.length(); i++){
-			for (int a = 0; a < A.length(); a++){
-				for (int b = 0; b < B.length(); b++){
-					if (C[i] == A[a] && C[i] == B[b]){
-						A[a] = '1';
-						B[b] = '1';
-						cout << C[i];	
-					}
+	string a;
+	string b;
+	while(cin>>a>>b){
+		string ans;
+		for(int i=0;i<a.length();i++){
+			for(int j=0;j<b.length();j++){
+				if(a[i]==b[j]){
+					ans+=a[i];
+					a[i]='1';
+					b[j]='2';
+					break;
 				}
 			}
 		}
-		cout << endl;
+		sort(ans.begin(),ans.end());
+		cout<<ans<<endl;
 	}
 }

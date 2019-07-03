@@ -1,42 +1,33 @@
 #include <iostream>
 #include <vector>
-#include <string>
-#include <cmath>
 #include <sstream>
+#include <cmath>
 using namespace std;
-int main() {
+int main(){
+	string x;
 	long long int a;
-	long long int d;
-	vector<long long int>b;
-	long long int c;
-	while(1) {
-		cin >> a;
-		cin.ignore();
-		d = a;
-		long long int answer = 0;
-		string line;
-		getline(cin,line);
-		stringstream ss(line);
-		while (ss>>c) {
-			b.push_back(c);
-		}
-		for (int i = 0; i<int(b.size()); i++) {
-			if (int(b.size()) - i - 2 == 0) {
-				d = 1;
-			}
-			else if (int(b.size()) - i - 2 > 0) {
-				for (int j = 1; j<int(b.size()) - i - 2; j++) {
-					d = d*a;
-				}
-			}
-				answer = answer + b[i] * (int(b.size()) - 1 - i)*d;
-				d = a;
-		}
-		cout << answer << endl;
+	while(getline(cin,x)){
+	    long double x2=0.0;
+		long long int ans=0;
+		string s;
+		stringstream ss;
+		ss<<x;
+		ss>>x2;
 		ss.clear();
-		b.clear();
-	} 
-	
-	
-	
+		getline(cin,s);
+		ss<<s;
+		vector<int>num;
+		while(ss>>a){
+			num.push_back(a);	
+			ss.clear();
+		}
+		for(int i=0,j=num.size()-1;i<num.size()-1,j>0;i++,j--){
+			if(j!=1){
+				ans+=num[i]*j*pow(x2,j-1);
+			}else{
+				ans+=num[i]*j;
+			}
+		}
+		cout<<ans<<endl;
+	}
 }

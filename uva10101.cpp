@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 using namespace std;
 int main(){
-	string input2;
 	long long int input=0;
 	long long int kutixkuti = 0;
 	long long int lakhxlakh = 0;
@@ -14,9 +14,11 @@ int main(){
 	long long int shata = 0;
 	long long int single = 0;
 	int n = 0;
-	while (getline(cin,input2)&&++n&&input2.length()>0) {
-		
-			input = stoll(input2);
+	while (cin>>input&&++n) {
+		if (input == 0){
+			cout << "   " << n << ". 0"<<endl;
+			continue;
+		}
 		kutixkuti = input / 100000000000000;
 		input = input - kutixkuti * 100000000000000;
 		lakhxlakh = input / 1000000000000;//12
@@ -40,7 +42,6 @@ int main(){
 		else if (n < 100 & n >= 10){ cout << "  " << n << "."; }
 		else if (n < 1000 & n >= 100){ cout << " " << n << "."; }
 		else if (n < 10000 & n >= 100){ cout<< n << "."; }
-		//printf("%4d. ", n);
 		if (kutixkuti != 0){
 			cout << " "<<kutixkuti << " kuti";
 		}
@@ -76,10 +77,6 @@ int main(){
 		if (single != 0){
 			cout << " " << single;
 		}
-		if (input2 == "0"){
-			cout << " 0";
-		}
-	
 		cout << endl;
 	}
 	

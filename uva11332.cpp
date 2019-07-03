@@ -1,23 +1,21 @@
 #include <iostream>
-#include <string>
 using namespace std;
-int fine(int a);
 int main(){
-	string problem;
-	while (cin >> problem&&problem != "0"){
-		int answer = 0;
-		for (int i = 0; i < problem.length(); i++){
-			answer+=problem[i] - '0';
+	long long int n=0;
+	while(cin>>n&&n!=0){
+		if(n<10){
+			cout<<n<<endl;
+		}else{
+			int ans=0;
+			while(n>10){
+				ans+=n%10;
+				n/=10;
+			}
+			ans+=n;
+			while(ans>=10){
+				ans=ans%10+ans/10;
+			}
+			cout<<ans<<endl;
 		}
-		while (answer>9){
-			answer = fine(answer);
-		}
-		cout << answer << endl;
 	}
-
-
-}
-int fine(int a){
-	a = a / 10 + a % 10;
-	return a;
 }

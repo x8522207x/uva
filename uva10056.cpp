@@ -11,14 +11,12 @@ int main(){
 		int I;
 		cin >> players >> probability >> I;
 		if (probability > 0.0){
-			cout << fixed << setprecision(4) << probability*pow(1 - probability, I - 1) / (1 - pow(1 - probability, players));//不能用printf(%.4f)會錯誤
+			cout << fixed << setprecision(4) << probability*pow(1 - probability, I - 1) / (1 - pow(1 - probability, players));
 		}
 		else {
 			cout << "0.0000";
 		}
 		cout << endl;
 	}
-
-
 	return 0;
 }

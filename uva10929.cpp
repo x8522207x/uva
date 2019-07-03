@@ -18,4 +18,4 @@ int main(){
 		}
 		else{ cout << input << " is not a multiple of 11." << endl; }
 	}
-}
+} 

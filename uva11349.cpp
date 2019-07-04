@@ -1,41 +1,44 @@
 #include <iostream>
-#include <string>
 #include <vector>
-#include <cmath>
-#include <cstdio>
+#include <sstream>
 using namespace std;
-int main() {
-	int Case;
-	cin >> Case;
+int main(){
+	int Case=0;
+	cin>>Case;
 	cin.ignore();
-	for (int o = 1; o <= Case; o++) {
-		long long int a[10000] = { 0 };
-		int write = 0;
-		int N = 0;
-		char w[10];
-		cin.getline(w, 10);
-		sscanf(w, "N = %d", &N);
-		for (int i = 0; i<N*N; i++) {
-			cin >> a[i];
+	for(int c=1;c<=Case;c++){
+		vector<int>matrix;
+		stringstream ss;
+		string firstLine;
+		getline(cin,firstLine);
+		string stringn;
+		bool non=false;
+		int intn=0;
+		int num=0;
+		for(int i=4;i<firstLine.length();i++){
+			stringn+=firstLine[i];
 		}
-
-		for (int i = 0; i<N*N; i++) {
-			if (a[i] != a[N*N - 1 - i]) {
-				write = 1;
+		ss<<stringn;
+		ss>>intn;
+		ss.clear();
+		for(int i=0;i<intn;i++){
+			getline(cin,stringn);
+			ss<<stringn;
+			while(ss>>num){
+				matrix.push_back(num);
+			}
+			ss.clear();
+		}
+		int size=matrix.size();
+		for(int i=0;i<size/2;i++){
+			if(matrix[i]!=matrix[size-1-i]||(matrix[i]==-1&&matrix[size-1-i]==-1)){
+				cout<<"Test #"<<c<<": Non-symmetric."<<endl;
+				non=true;
 				break;
 			}
-			else if (a[i]<0) {
-				write = 1;
-				break;
-			}
 		}
-		if (write == 0) {
-			cout << "Test #" << o << ": Symmetric." << endl;
+		if(non==false){
+			cout<<"Test #"<<c<<": Symmetric."<<endl;
 		}
-		else if (write == 1) {
-			cout << "Test #" << o << ": Non-symmetric." << endl;
-		}
-		cin.ignore(256, '\n');
 	}
-
 }

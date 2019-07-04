@@ -1,6 +1,4 @@
 #include <iostream>
-#include <string>
-#include <vector>
 using namespace std;
 int main() {
 	int path[51][51] = { 0 };

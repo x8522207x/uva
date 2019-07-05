@@ -1,33 +1,31 @@
 #include <iostream>
-#include <string>
 #include <vector>
+#include <algorithm>
 using namespace std;
-int main() {
-	int fib[38] = { 0 };
-	fib[0] = 1;
-	fib[1] = 2;
-	for (int i = 2; i<38; i++) {
-		fib[i] = fib[i - 1] + fib[i - 2];
+int main(){
+	vector<long long>a;
+	a.push_back(1);
+	a.push_back(2);
+	for(int i=0;i<50;i++){
+		a.push_back(a[i]+a[i+1]);
 	}
-	int Case = 0;
-	int N = 0;
-	cin >> Case;
-	while (Case--) {
-		cin >> N;
-		cout << N << " = ";
-		vector<int>ans;
-		for (int i = 37; i >= 0; i--) {
-			if (N >= fib[i]) {
-				ans.push_back(1);
-				N -= fib[i];
-			}
-			else if (ans.size()>0 && N<fib[i]) {
-				ans.push_back(0);
+	sort(a.rbegin(),a.rend());
+	int Case=0;
+	cin>>Case;
+	while(Case--){
+		long long int nums=0;
+		cin>>nums;
+		cout<<nums<<" = ";
+		bool start=false;
+		for(int i=0;i<a.size();i++){
+			if(nums>=a[i]){
+				nums-=a[i];
+				start=true;
+				cout<<"1";
+			}else if(nums<a[i]&&start==true){
+				cout<<"0";
 			}
 		}
-		for (int i = 0; i<ans.size(); i++) {
-			cout << ans[i];
-		}
-		cout << " (fib)" << endl;
+		cout<<" (fib)"<<endl;
 	}
 }

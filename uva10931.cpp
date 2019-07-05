@@ -1,38 +1,27 @@
 #include <iostream>
+#include <cmath>
 #include <vector>
-#include <string>
 using namespace std;
-int main() {
-	vector<long long int>two;
-	long long int question;
-	long long int extwo = 1;
-	for (int i = 0;; i++) {
-		two.push_back(extwo);
-		extwo *= 2;
-		if (extwo > 9999999999) {
-			break;
-		}
+int main(){
+	vector<long long >bin;
+	for(int i=31;i>=0;i--){
+		bin.push_back(pow(2,i));
 	}
-	while (cin>>question&&question!=0)
-	{
-		string ans;
-		int one = 0;
-		for (int i = two.size() - 1; i >= 0; i--) {
-			if (question >= two[i]) {
-				cout << question << " ";
-				ans+='1';
-				question -= two[i];
-				one++;
-			}
-			else if (question < two[i] && ans.size()>0) {
-				ans += '0';
+	int num=0;
+	while(cin>>num && num!=0){
+		bool start=false;
+		int oneN=0;
+		cout<<"The parity of ";
+		for(int i=0;i<bin.size();i++){
+			if(bin[i]<=num){
+				cout<<"1";
+				oneN++;
+				start=true;
+				num-=bin[i];
+			}else if(start==true){
+				cout<<"0";
 			}
 		}
-		cout << endl;
-		cout << "The parity of " << ans << " is " << one << " (mod 2)." << endl;
+		cout<<" is "<<oneN<<" (mod 2)."<<endl;
 	}
-
-	system("pause");
-
-
 }

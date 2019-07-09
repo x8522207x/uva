@@ -1,9 +1,10 @@
+#include <iostream>
 #include <vector>
 using namespace std;
 int main(){
 	vector< vector<char> > test;
 	string a;
-	int line=0;
+	int line=0, max=0;
 	while(getline(cin,a)){
 		test.push_back(vector<char>());
 		for(int i=0;i<a.length();i++){
@@ -11,7 +12,6 @@ int main(){
 		}
 		line++;
 	}
-	int max=0;
 	for(int i=0;i<line;i++){
 		if(test[i].size()>max){
 			max=test[i].size();
@@ -30,5 +30,4 @@ int main(){
 		} 
 		cout<<'\n';
 	}
-	return 0;
 }

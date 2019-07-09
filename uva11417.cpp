@@ -16,5 +16,4 @@ int main(){
 		}
 		cout<<G<<endl;
 	}
-	return 0;
 }

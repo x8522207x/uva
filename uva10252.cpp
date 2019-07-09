@@ -2,8 +2,7 @@
 #include <algorithm>
 using namespace std;
 int main(){
-	string a;
-	string b;
+	string a,b;
 	while(cin>>a>>b){
 		string ans;
 		for(int i=0;i<a.length();i++){

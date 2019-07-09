@@ -4,8 +4,7 @@ int main(){
 	int Case=0;
 	cin>>Case;
 	while(Case--){
-		int ans[10]={0};
-		int press[10]={0};
+		int ans[10]={0},press[10]={0};
 		string s;
 		cin>>s;
 		for(int i=0;i<s.length();i++){

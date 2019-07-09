@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
 int main(){
-	long long int peoples;
-	long long int day;
+	long long int peoples,day;
 	while(cin>>peoples>>day){
 		long long int sum=0;
 		for(long long int i=peoples;;i++){

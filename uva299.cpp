@@ -6,8 +6,8 @@ int main(){
 	cin>>Case;
 	while(Case--){
 		int count=0, swapT=0;
-		cin>>count;
 		vector<int>num;
+		cin>>count;
 		for(int i=0,c=0;i<count;i++){
 			cin>>c;
 			num.push_back(c);

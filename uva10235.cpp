@@ -2,7 +2,7 @@
 #include <sstream>
 using namespace std;
 int main(){
-	string s,b;
+	string s;
 	while(cin>>s){
 		string b;
 		int fN=0,sN=0;

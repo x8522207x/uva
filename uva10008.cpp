@@ -4,12 +4,10 @@
 #include <sstream>
 using namespace std;
 int main(){
-	string big="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	string small="abcdefghijklmnopqrstuvwxyz";
+	string test,big="ABCDEFGHIJKLMNOPQRSTUVWXYZ",small="abcdefghijklmnopqrstuvwxyz";
 	int num[26]={0};
 	stringstream ss;
-	int Case=0;
-	string test;
+	int Case=0,max=0;
 	getline(cin,test);
 	ss<<test;
 	ss>>Case;
@@ -33,9 +31,7 @@ int main(){
 				}
 			}
 		}
-	
 	}
-	int max=0;
 	for(int i=0;i<26;i++){
 		if(num[i]!=0&&max<num[i]){
 			max=num[i];
@@ -48,6 +44,4 @@ int main(){
 			}
 		}
 	}
-
-
 }

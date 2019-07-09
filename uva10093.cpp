@@ -4,6 +4,7 @@ int main(){
 	string s;
 	while(cin>>s){
 		int ans=0;	
+		bool mod=false;
 		for(int i=0;i<s.length();i++){
 			if(s[i]>47&&s[i]<58){
 				ans+=s[i]-'0';
@@ -13,7 +14,6 @@ int main(){
 				ans+=s[i]-61;
 			}
 		}
-		bool mod=false;
 		if(ans>=10){
 			for(int i=61;i>=2;i--){
 				if(ans%i==0){

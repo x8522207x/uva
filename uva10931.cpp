@@ -4,10 +4,10 @@
 using namespace std;
 int main(){
 	vector<long long >bin;
+	int num=0;
 	for(int i=31;i>=0;i--){
 		bin.push_back(pow(2,i));
 	}
-	int num=0;
 	while(cin>>num && num!=0){
 		bool start=false;
 		int oneN=0;

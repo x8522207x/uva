@@ -6,11 +6,8 @@ int main(){
 	int Case=0;
 	cin>>Case;
 	while(Case--){
-		int days=0;
-		int party=0;
-		int ans=1;
-		vector<int>rest;
-		vector<int>workday;
+		int days=0,party=0,ans=1;
+		vector<int>rest,workday;
 		cin>>days>>party;
 		for(int i=0;i<=days/7;i++){
 			rest.push_back(6+7*i);

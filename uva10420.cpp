@@ -24,8 +24,8 @@ int main(){
 		}else{
 			cout<<s2<<" "<<ans+1<<endl;
 			s2= sv[i];
-			ans=1;
+			ans=0;
 		}
 	}
-	cout<<s2<<" "<<ans<<endl;
+	cout<<s2<<" "<<ans+1<<endl;
 }

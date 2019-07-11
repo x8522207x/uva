@@ -24,7 +24,7 @@ int main(){
 		for(int i=line-1;i>=0;i--){
 			if(test[i][j]){
 				cout<<test[i][j];
-			}else if(i!=0 &&!test[i][j]){
+			}else if(/*i!=0 &&*/!test[i][j]){
 				cout<<" ";
 			}
 		} 

@@ -3,10 +3,11 @@ using namespace std;
 int main(){
 	int Case=0;
 	cin>>Case;
+	cin.ignore();
 	while(Case--){
 		int ans[10]={0},press[10]={0};
 		string s;
-		cin>>s;
+		getline(cin,s);
 		for(int i=0;i<s.length();i++){
 			if(s[i]=='c'){
 				for(int j=0;j<10;j++){

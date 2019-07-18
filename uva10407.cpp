@@ -37,6 +37,9 @@ int main(){
 				break;
 			}	
 		}
+		if(ans==0){
+			ans=1;
+		}
 		cout<<ans<<endl;
 	}
 }

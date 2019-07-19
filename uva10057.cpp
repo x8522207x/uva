@@ -4,52 +4,35 @@
 #include <cmath>
 using namespace std;
 int main(){
-	long long int n=0;
-	while(cin>>n){
-		vector<int>nums,sum;
-		int min=100000,firAns=0,secAns=0,thirAns=0;
-		for(int i=0,c=0;i<n;i++){
-			cin>>c;
-			nums.push_back(c);
+	int num=0;
+	while(cin>>num){
+		vector<int>nums;
+		int firAns=0,firAns2=0,secAns=0,thiAns=0;
+		for(int i=0,g=0;i<num;i++){
+			cin>>g;
+			nums.push_back(g);
 		}
 		sort(nums.begin(),nums.end());
-		for(int i=1;i<=nums.back();i++){
-			int s=0;
-			for(int c=0;c<nums.size();c++){
-				s+=abs(nums[c]-i);
-			}
-			sum.push_back(s);
-		}
-		for(int i=0;i<sum.size();i++){
-			if(sum[i]<min){
-				min=sum[i];
-				firAns=i;
-			}
-		}
 		if(nums.size()%2==0){
-			for(int i=0;i<nums.size()/2;i++){
-				if(nums[nums.size()/2-1]==nums[i]){
-					secAns++;
-				}
-			}
-			for(int i=nums.size()/2+1;i<nums.size();i++){
-				if(nums[nums.size()/2]==nums[i]){
-					secAns++;
-				}
-			}
+			firAns=nums[nums.size()/2-1];
+			firAns2=nums[nums.size()/2];
 		}else {
-			for(int i=0;i<nums.size();i++){
-				if(nums[nums.size()/2]==nums[i]){
+			firAns=nums[nums.size()/2];
+		}
+		for(int i=1;i<=nums.back();i++){
+			int g=0,min=0;
+			secAns=0;
+			for(int j=0;j<nums.size();j++){
+				g+=abs(nums[j]-i);
+				min+=abs(nums[j]-firAns);
+				if(nums[j]==firAns || nums[j]==firAns2){
 					secAns++;
 				}
 			}
-			secAns-=1;
-		}
-		for(int i=0;i<sum.size();i++){
-			if(sum[i]==min){
-				thirAns++;
+			if(g==min){
+				thiAns++;
 			}
 		}
-		cout<<firAns+1<<" "<<secAns+1<<" "<<thirAns<<endl;		
+		cout<<firAns<<" "<<secAns<<" "<<thiAns<<endl;
 	}
 }

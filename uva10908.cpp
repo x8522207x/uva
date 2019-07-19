@@ -16,9 +16,9 @@ int main(){
 			rec.push_back(s);
 		}
 		for(int i=0;i<Q;i++){
-			int y=0,x=0,length=1,lim=0;
+			int y=0,x=0,length=1;
 			cin>>y>>x;
-			for(int j=1;j<=7;j++){
+			for(int j=1;j<=x;j++){
 				bool same=0;
 				if(y-j<0 || y+j>=M || x-j<0 || x+j>=N){
 					break;
